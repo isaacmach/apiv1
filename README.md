@@ -24,6 +24,7 @@ Retorno
 {
     "access_token": "JWTTOKEN"  
 }
+Use JWT token for authorization in the authentication header (Authorization).
 ```
 ## 2.2 - Obter o tipo de um Pokémon (fogo, água, terra, ar, etc…) pelo seu nome.
 - **Endpoint**: `http://localhost:5000/get_pokemon_info_by_name`
