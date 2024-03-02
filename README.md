@@ -34,3 +34,34 @@ Retorno
     "pokemon_name": "pikachu"
 }
 ```
+## 2.3 - Obter um Pokémon aleatório de um tipo específico.
+- **Endpoint**: `http://localhost:5000/get_random_pokemon_by_type`
+- **Método**: POST
+- **Corpo da Requisição**:
+```json
+{
+    "pokemon_type": "fire"
+}
+```
+## 2.4 - Obter o Pokémon com o nome mais longo de um determinado tipo.
+- **Endpoint**: `http://localhost:5000/get_longest_pokemon_name_by_type`
+- **Método**: POST
+- **Corpo da Requisição**:
+```json
+{
+    "pokemon_type": "fire"
+}
+```
+## 2.5 - Obter um Pokémon aleatório que contenha uma das letras ‘I’,’A’,’M’ em seu nome e que seja do tipo específico mais forte com base no clima atual da sua cidade.
+- **Endpoint**: `http://localhost:5000/get_random_pokemon_by_city`
+- **Método**: GET
+
+# 3 - Instruções Docker
+- **Endpoint**: `http://localhost:5000/get_longest_pokemon_name_by_type`
+- **Método**: POST
+- **Corpo da Requisição**:
+```bash
+docker build -t pokeflaskapi .
+docker run -p 5000:5000 pokeflaskapi
+```
+
