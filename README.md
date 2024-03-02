@@ -62,4 +62,7 @@ Use JWT token for authorization in the authentication header (Authorization).
 docker build -t pokeflaskapi .
 docker run -p 5000:5000 pokeflaskapi
 ```
+# 5 - APIs externas 
+- **PokeApi**
+- **Openweathermap**
 
