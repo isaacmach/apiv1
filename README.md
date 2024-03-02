@@ -20,3 +20,17 @@
     "username": "isaac",
     "password": "123456"
 }
+Retorno
+{
+    "access_token": "JWTTOKEN"  
+}
+```
+## 2.2 - Obter o tipo de um Pokémon (fogo, água, terra, ar, etc…) pelo seu nome.
+- **Endpoint**: `http://localhost:5000/get_pokemon_info_by_name`
+- **Método**: POST
+- **Corpo da Requisição**:
+```json
+{
+    "pokemon_name": "pikachu"
+}
+```
