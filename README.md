@@ -9,7 +9,7 @@
 7. **Autorização de Acesso**: Se o token for válido, a API concede acesso aos recursos solicitados.
 8. **Expiração e Renovação do Token JWT (Opcional)**: Os tokens podem ter uma data de expiração e pode ser implementado um mecanismo de renovação.
 
-# 2 - ENDPOINTS
+# 2 - ENDPOINTS - Para acessar todos os endpoints, é necessário incluir um token de validação JWT no cabeçalho de autenticação (Authentication Header).
 
 ## 2.1 - Login
 - **Endpoint**: `http://localhost:5000/login`
