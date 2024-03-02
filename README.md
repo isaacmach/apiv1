@@ -57,9 +57,6 @@ Retorno
 - **Método**: GET
 
 # 3 - Instruções Docker
-- **Endpoint**: `http://localhost:5000/get_longest_pokemon_name_by_type`
-- **Método**: POST
-- **Corpo da Requisição**:
 ```bash
 docker build -t pokeflaskapi .
 docker run -p 5000:5000 pokeflaskapi
