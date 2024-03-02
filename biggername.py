@@ -1,5 +1,6 @@
 import requests
 
+#Obter um Pokémon com o nome mais longo, baseado em um tipo específico.
 def get_longest_pokemon_name_by_type(pokemon_type):
     url = f"https://pokeapi.co/api/v2/type/{pokemon_type.lower()}"
     response = requests.get(url)

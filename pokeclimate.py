@@ -1,6 +1,7 @@
 import requests
 import random
 
+#Obter um Pokémon aleatório que contenha uma das letras 'I', 'A', 'M' em seu nome e que seja do tipo mais forte com base no clima atual de sua cidade.
 def get_current_weather(latitude, longitude, api_key_openweathermap):
     url = f"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={api_key_openweathermap}"
     response = requests.get(url)

@@ -3,11 +3,41 @@ from pokename import get_pokemon_info_by_name
 from pokerandon import get_random_pokemon_by_type
 from biggername import get_longest_pokemon_name_by_type
 from pokeclimate import get_random_pokemon
+from auth import authenticate
+from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
 
 app = Flask(__name__)
 
+# Configuração do Flask JWT Extended
+app.config['JWT_SECRET_KEY'] = 'ISAACMACHADO'  # Chave secreta para assinar os tokens
+jwt = JWTManager(app)
+
+# Rota para login e geração de token
+@app.route('/login', methods=['POST'])
+
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+    
+    token = authenticate(username, password)
+    if token:
+        return jsonify(access_token=token), 200
+    else:
+        return jsonify({"msg": "Invalid username or password"}), 401
+
+# Rota protegida que requer autenticação JWT
+@app.route('/protected', methods=['GET'])
+@jwt_required()
+
+def protected():
+    current_user = get_jwt_identity()
+    return jsonify(logged_in_as=current_user), 200
+
 #get_pokemon_info_by_name
-@app.route('/get_pokemon_info_by_name', methods=['POST'])
+@app.route('/get_pokemon_info_by_name', methods=['GET','POST'])
+@jwt_required()
+
 def get_pokemon():
     data = request.json
     if 'pokemon_name' in data:
@@ -21,7 +51,9 @@ def get_pokemon():
         return jsonify({"error": "Campo 'pokemon_name' não encontrado"}), 400
     
 #get_random_pokemon_by_type
-@app.route('/get_random_pokemon_by_type', methods=['POST'])
+@app.route('/get_random_pokemon_by_type', methods=['GET','POST'])
+@jwt_required()
+
 def random_pokemon():
     data = request.json
     if 'pokemon_type' in data:
@@ -35,7 +67,9 @@ def random_pokemon():
         return jsonify({"error": "Campo 'pokemon_type' não encontrado"}), 400    
 
 #get_longest_pokemon_name_by_type
-@app.route('/get_longest_pokemon_name_by_type', methods=['POST'])
+@app.route('/get_longest_pokemon_name_by_type', methods=['GET','POST'])
+@jwt_required()
+
 def longest_pokemon_name():
     data = request.json
     if 'pokemon_type' in data:
@@ -49,7 +83,9 @@ def longest_pokemon_name():
         return jsonify({"error": "Campo 'pokemon_type' não encontrado"}), 400
 
 #get_random_pokemon_by_city
-@app.route('/get_random_pokemon_by_city', methods=['GET'])
+@app.route('/get_random_pokemon_by_city', methods=['GET','POST'])
+@jwt_required()
+
 def get_random_pokemon_route():
     # Obter coordenadas de latitude e longitude da requisição
     latitude = request.args.get('lat')

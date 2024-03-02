@@ -1,5 +1,6 @@
 import requests
 
+#Obter informações sobre um Pokémon com base no seu nome.
 def get_pokemon_info_by_name(pokemon_name):
     url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name.lower()}"
     response = requests.get(url)
