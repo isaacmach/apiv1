@@ -57,10 +57,9 @@ Use JWT token for authorization in the authentication header (Authorization).
 - **Endpoint**: `http://localhost:5000/get_random_pokemon_by_city`
 - **Método**: GET
 
-# 3 - Instruções Docker
+# 3 - Instruções DockerHub
 ```bash
-docker build -t pokeflaskapi .
-docker run -p 5000:5000 pokeflaskapi
+docker run -p 5000:5000 isaacmachado098/pokeflaskapi:main
 ```
 # 5 - APIs externas 
 - **PokeApi**
