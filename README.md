@@ -11,7 +11,7 @@
 
 # 2 - ENDPOINTS - Para acessar todos os endpoints, é necessário incluir um token de validação JWT no cabeçalho de autenticação (Authentication Header).
 
-## 2.1 - Login - Obter um token JWT válido usando as credenciais corretas.
+## 2.1 - Login: Obter um token JWT válido usando as credenciais corretas.
 - **Endpoint**: `http://localhost:5000/login`
 - **Método**: POST
 - **Corpo da Requisição**:
