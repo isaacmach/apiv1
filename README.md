@@ -62,7 +62,7 @@ Use JWT token for authorization in the authentication header (Authorization).
 docker run -p 5000:5000 isaacmachado098/pokeflaskapi:main
 ```
 # 5 - Fluxo 
-![image](https://github.com/isaacmach/POKECHALLENGE_V2/assets/123345527/47a0d7f1-9765-4fad-9a9d-123887a050df)
+![image](https://github.com/isaacmach/POKECHALLENGE_V2/assets/123345527/1acf3e8f-7e9a-4f2a-a566-5669adb948c0)
 
 # 6 - APIs externas 
 - **PokeApi**
