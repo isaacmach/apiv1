@@ -54,7 +54,7 @@ Use JWT token for authorization in the authentication header (Authorization).
 }
 ```
 ## 2.5 - Obter um Pokémon aleatório que contenha uma das letras ‘I’,’A’,’M’ em seu nome e que seja do tipo específico mais forte com base no clima atual da sua cidade.
-- **Endpoint**: `http://localhost:5000/get_random_pokemon_by_city`
+- **Endpoint**: `http://localhost:5000/get_random_pokemon_by_city?lat=-3.71839&lon=-38.5434`
 - **Método**: GET
 
 # 3 - Instruções DockerHub
